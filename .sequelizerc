@@ -1,7 +1,9 @@
+const { Resolver } = require("dns");
 const { resolve } = require("path");
 
 module.exports = {
   config: resolve(__dirname, "src", "config", "database.js"),
   "migrations-path": resolve(__dirname, "src", "database", "migrations"),
   "seeders-path": resolve(__dirname, "src", "database", "seeds"),
+  "models-path": resolve(__dirname, "src", "app", "models"),
 };

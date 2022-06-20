@@ -21,9 +21,6 @@ class UserController {
         login,
         email,
       },
-      token: jwt.sign({ id }, authConfig.secret, {
-        expiresIn: authConfig.expiresIn,
-      }),
     });
   }
 }
