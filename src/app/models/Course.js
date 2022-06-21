@@ -6,6 +6,7 @@ class Course extends Model {
       {
         name: Sequelize.STRING,
         code: Sequelize.STRING,
+        term_id: Sequelize.INTEGER,
         description: Sequelize.TEXT,
         custom_1: Sequelize.STRING,
         custom_2: Sequelize.STRING,
