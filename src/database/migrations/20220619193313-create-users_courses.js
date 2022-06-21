@@ -3,9 +3,14 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable("courses_users", {
+      id: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+      },
       user_id: {
         type: Sequelize.INTEGER,
-        primaryKey: true,
         references: {
           model: "users",
           key: "id",
@@ -16,7 +21,6 @@ module.exports = {
       },
       course_id: {
         type: Sequelize.INTEGER,
-        primaryKey: true,
         references: {
           model: "courses",
           key: "id",
