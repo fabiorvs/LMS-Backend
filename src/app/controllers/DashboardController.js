@@ -16,6 +16,11 @@ class DashbooardController {
       include: [
         {
           model: Course,
+          where: [
+            {
+              status: "Y",
+            },
+          ],
         },
       ],
     });
