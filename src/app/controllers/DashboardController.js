@@ -10,6 +10,7 @@ class DashbooardController {
       where: [
         {
           user_id: req.userId,
+          status: "Y",
         },
       ],
       include: [
