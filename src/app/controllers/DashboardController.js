@@ -1,9 +1,11 @@
 import CourseUser from "../models/CoursesUser";
 import Course from "../models/Course";
+import Term from "../models/Term";
 
 class DashbooardController {
   async show(req, res) {
     CourseUser.belongsTo(Course, { foreignKey: "course_id" });
+    Course.belongsTo(Term, { foreignKey: "term_id" });
 
     const courseUser = await CourseUser.findAll({
       where: [
@@ -18,6 +20,16 @@ class DashbooardController {
           where: [
             {
               status: "Y",
+            },
+          ],
+          include: [
+            {
+              model: Term,
+              where: [
+                {
+                  status: "Y",
+                },
+              ],
             },
           ],
         },
