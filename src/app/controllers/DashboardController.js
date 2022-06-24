@@ -7,6 +7,8 @@ class DashbooardController {
     CourseUser.belongsTo(Course, { foreignKey: "course_id" });
     Course.belongsTo(Term, { foreignKey: "term_id" });
 
+    const dateNow = new Date();
+
     const courseUser = await CourseUser.findAll({
       where: [
         {
@@ -25,6 +27,7 @@ class DashbooardController {
           include: [
             {
               model: Term,
+              required: false,
               where: [
                 {
                   status: "Y",
